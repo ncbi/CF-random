@@ -1,0 +1,26 @@
+8UBH
+654 seqs removed for containing more than 25% gaps, 6880 remaining
+eps	n_clusters	n_not_clustered
+3.00	6	1693
+3.50	11	1645
+4.00	18	1601
+4.50	17	1565
+5.00	33	1490
+5.50	37	1359
+6.00	46	1264
+6.50	47	1068
+7.00	52	841
+7.50	48	610
+8.00	41	359
+8.50	29	243
+9.00	5	93
+9.50	3	23
+10.00	2	3
+10.50	1	0
+Selected eps=7.00
+6880 total seqs
+244 clusters, 2072 of 6880 not clustered (0.30)
+avg identity to query of unclustered: 0.34
+avg identity to query of clustered: 0.37
+wrote clustering data to subsampled_MSAs/8UBH_clustering_assignments.tsv
+wrote cluster metadata to subsampled_MSAs/8UBH_cluster_metadata.tsv
