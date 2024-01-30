@@ -1,5 +1,4 @@
-![header]
-#AF-cluster controls.
+AF-cluster controls.
 
 Update: Figure S1a was run with the monomer setting.  We learned that we should have used the monomer_ptm preset instead of monomer.  
 
