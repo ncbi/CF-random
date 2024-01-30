@@ -6,4 +6,5 @@ Model presets make no difference: random sequence sampling still outperforms AF-
 
 We also show the distribution of points for model 1 only, since Wayment-Steele et al. used only model 1 (for reasons we don't understand).  Random sequence sampling still outperforms.
 
-![Updated Figure S1](a/ptm_plot_all_and_model1_sm.png | width=100)
+<img src="https://github.com/porterll/CF-random/blob/main/FigS1/a/ptm_plot_all_and_model1_sm.png" width="300">
+
