@@ -7,17 +7,18 @@ import matplotlib
 from matplotlib import pyplot as plt
 import pandas as pd
 
-font = {'size'   : 12}
+font = {'size'   : 10}
 
 matplotlib.rc('font', **font)
 
 if __name__ == '__main__':
 
-    f = open('af2_ptm_scores.txt').read().splitlines()
+    f = open('RfaH_Colabfold_MSA_plddts.txt').read().splitlines()
     f2 = open('good_RFAH_autoinhibited_plDDTS_curated.txt').read().splitlines()
+    f3 = open('RfaH_AF2.2_ptm_nomaskx250.txt').read().splitlines()
 
     nums = []
-    numsm = []
+    nums3 = []
     nums2 = []
 
     l70 = 0
@@ -25,8 +26,6 @@ if __name__ == '__main__':
 
     for i in f:
         info = i.split()
-        if 'model_1' in info[0]:
-            numsm.append(float(info[1][:-1]))
         nums.append(float(info[1][:-1]))
         if nums[-1] < 70:
             l70 += 1
@@ -36,22 +35,26 @@ if __name__ == '__main__':
     for i in f2:
         info = i.split()
         nums2.append(float(info[1][:-1]))
+
+    for i in f3:
+        info = i.split()
+        nums3.append(float(info[1][:-1]))
         
     print(min(nums))
     
 
-    dict_info = {'Whole MSA':nums,'Whole MSA, model 1': numsm, 'AF-cluster':nums2}
+    dict_info = {'Whole MSA':nums,'Whole MSA, model 1': nums3, 'AF-cluster':nums2}
 
     labels = []
     for i in range(len(nums)):
-        labels.append('Whole MSA')
-    for i in range(len(numsm)):
-        labels.append('Whole MSA\nmodel 1')
+        labels.append('Whole MSA\nmonomer')
+    for i in range(len(nums3)):
+        labels.append('Whole MSA\nptm, model 1')
     for i in range(len(nums2)):
         labels.append('AF-cluster')
 
 
-    all_nums = nums+numsm+nums2
+    all_nums = nums+nums3+nums2
 
     dat = {'Method':labels,'pLDDT':all_nums}
 
@@ -59,14 +62,15 @@ if __name__ == '__main__':
     ax = fig.add_subplot(111)
 
     sns.stripplot(data=dat,x='Method',y='pLDDT',zorder=0)
-    plt.plot([-0.15,0.15],[68.6,68.6],'r-',zorder=10)
+    plt.plot([0.85,1.15],[68.6,68.6],'r-',zorder=10)
+    plt.plot([1.85,2.15],[73.9,73.9],'r-',zorder=10)
     plt.setp(ax.get_xticklabels(), ha="right", rotation=45)
 
 
     avg = np.average(nums)
     med = np.median(nums)
 
-    avg2=np.average(numsm)
+    avg2=np.average(nums3)
 
     avg3 = np.average(nums2)
 
@@ -82,4 +86,4 @@ if __name__ == '__main__':
 
     plt.tight_layout()
 
-    plt.savefig('ptm_plot_all_and_model1.png',dpi=1200)
+    plt.savefig('ptm_plot_all.png',dpi=1200)
