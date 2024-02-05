@@ -1,9 +1,8 @@
 # AF-cluster controls
 
-Update: Figure S1a was run with the monomer setting.  We learned that we should have used the monomer_ptm preset instead of monomer.  
+Update: Figure S1a was initially run with the monomer preset (leftmost strip plot).  We learned that the monomer_ptm preset with masked_msa_replace_fraction=0.0, deterministic=True, model 1 only (middle strip plot) was the appropriate control for the AF-cluster results  in the rightmost strip plot.
 
-**Model presets do not change the outcome: random sequence sampling still outperforms AF-cluster:** 
+**Model presets do not change our conclusions: whole MSA sampling still outperforms AF-cluster:** 
 
-<img src="https://github.com/porterll/CF-random/blob/main/FigS1/a/ptm_plot_all_and_model1_sm.png" width="300">
+<img src="https://github.com/porterll/CF-random/blob/main/FigS1/a/ptm_plot_all.png" width="300">
 
-The distribution of points for model 1 only is also shown separately, since Wayment-Steele et al. used only model 1.  Random sequence sampling still outperforms sequence clustering.
