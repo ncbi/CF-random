@@ -16,6 +16,7 @@ Code for analysis written in python3 using the following libraries:
 -> numpy     
 -> mdtraj     
 -> matplotlib  
--> seaborn   
+-> seaborn  
+-> biopython
 
 
