@@ -110,7 +110,7 @@ if __name__ == '__main__':
         sys.exit('Please enter a name for your output figure')
 
     ####Uncomment bottom pdb_structures for af-cluster figure###
-    pdb_structures = glob('2QKE_329/*/*pdb') #cf-random
+    pdb_structures = glob('kaib_monomer/*/*pdb') #cf-random
     #pdb_structures = glob('00_KaiB_preds_3r/2QKEE_[0-9]??*pdb') #af-cluster
 
 
