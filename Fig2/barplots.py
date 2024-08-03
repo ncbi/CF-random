@@ -15,8 +15,8 @@ def make_fig(proteins,att,ylabel='',name='test'):
     mpl.rcParams['xtick.labelsize'] = label_size
     mpl.rcParams['ytick.labelsize'] = label_size
     mpl.rcParams['figure.figsize'] = [3,4]
-    if name == 'num_preds':
-        mpl.rcParams['figure.figsize'] = [3,3.3]
+    #if name == 'num_preds':
+        #mpl.rcParams['figure.figsize'] = [3,3.3]
 
     plt.rcParams['font.family'] = 'Helvetica'
 
@@ -42,24 +42,25 @@ if __name__ == '__main__':
     proteins = ('KaiB','Mad2','RfaH')
 
     MCCs = {
-        'CF-random': (1.0,0.87,0.62),
-        'AF-cluster': (0.6,0.7,0.4)}
+        'CF-random': (1.0,0.96,0.5),
+        'AF-cluster': (0.6,0.70,0.4)}
+        #'AF-cluster': (0.64,0.70,0.43)}
 
     Accuracies = {
-        'CF-random': (68,24,64),
+        'CF-random': (69,65,92),
         'AF-cluster': (29,2,4)}
 
     Efficiencies = {
-        'CF-random': (2,1,2),
+        'CF-random': (7,7,7),
         'AF-cluster': (329,95,250)}
 
     Structures = {
-        'CF-random': (330,95,250),
+        'CF-random': (55,55,55),
         'AF-cluster': (329,95,250)}
 
     make_fig(proteins,MCCs,'Matthews Correlation Coefficient','MCC')
     make_fig(proteins,Accuracies,'%Success','accuracy')
-    make_fig(proteins,Efficiencies,'Number of AF2/CF Runs','efficiency')
+    make_fig(proteins,Efficiencies,'Number of AF2 or CF Runs','efficiency')
     make_fig(proteins,Structures,'#Predictions','num_preds')
     
     
