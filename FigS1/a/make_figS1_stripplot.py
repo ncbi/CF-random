@@ -13,7 +13,7 @@ matplotlib.rc('font', **font)
 
 if __name__ == '__main__':
 
-    f = open('RfaH_Colabfold_MSA_plddts.txt').read().splitlines()
+    f = open('RfaH_colabfold_msax250_model1_ptm_plddts_sorted.txt').read().splitlines()
     f2 = open('good_RFAH_autoinhibited_plDDTS_curated.txt').read().splitlines()
 
     nums = []
@@ -34,8 +34,8 @@ if __name__ == '__main__':
         info = i.split()
         nums2.append(float(info[1][:-1]))
 
-    print(l70,g80)
-    print(min(nums))
+    #print(l70,g80)
+    #print(min(nums))
     
 
     dict_info = {'Whole MSA':nums,'AF-cluster':nums2}
@@ -54,7 +54,7 @@ if __name__ == '__main__':
     ax = fig.add_subplot(111)
 
     sns.stripplot(data=dat,x='Method',y='pLDDT',zorder=0)
-    plt.plot([-0.15,0.15],[68.6,68.6],'r-',zorder=10)
+    #plt.plot([-0.15,0.15],[68.6,68.6],'r-',zorder=10)
     plt.setp(ax.get_xticklabels(), ha="right", rotation=45)
 
 
@@ -63,6 +63,7 @@ if __name__ == '__main__':
 
     avg2=np.average(nums2)
 
+    print(avg)
     print(avg2)
 
     plt.plot([-0.15,0.15],[avg,avg],'k-',zorder=10)
